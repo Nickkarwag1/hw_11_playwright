@@ -52,13 +52,13 @@ const config: PlaywrightTestConfig = {
             },
         },
 
-        {
-            name: "firefox",
-            use: {
-                ...devices["Desktop Firefox"],
-                viewport: { width: 1920, height: 1080 },
-            },
-        },
+        // {
+        //     name: "firefox",
+        //     use: {
+        //         ...devices["Desktop Firefox"],
+        //         viewport: { width: 1920, height: 1080 },
+        //     },
+        // },
 
         // {
         //   name: 'webkit',
@@ -68,12 +68,12 @@ const config: PlaywrightTestConfig = {
         // },
 
         /* Test against mobile viewports. */
-        {
-            name: "Mobile Chrome",
-            use: {
-                ...devices["iPad Pro 11"],
-            },
-        },
+        // {
+        //     name: "Mobile Chrome",
+        //     use: {
+        //         ...devices["iPad Pro 11"],
+        //     },
+        // },
         // {
         //   name: 'Mobile Safari',
         //   use: {
