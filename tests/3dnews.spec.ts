@@ -6,11 +6,13 @@ import { PhonePage } from "../pages/PhonePage";
 import { PhotoVideoPage } from "../pages/PhotoVideoPage";
 import { PageFactory } from "../pages/pageFactory/pageFactory";
 import { EXPECTED_VALUE } from "../helpers/expectedValue";
+import { logger } from "../logger/winston";
 
 const { NVIDIA, GAMING_NOTEBOOKS, NOTEBOOK, GAMING_PRO, WATCH_3_PRO, SMARTPHONES, DIGITAL } = EXPECTED_VALUE;
 
 test.describe("Tests wedsite 3dnews.ru", async () => {
     test("Video cards test", async ({ page }) => {
+        logger.info("Video cards test");
         const videoCards = PageFactory.getPage(page, "VideoCards") as VideoCardsPage;
         await videoCards.visitVideoCards();
         await videoCards.clickNvidiaCards();
@@ -20,6 +22,7 @@ test.describe("Tests wedsite 3dnews.ru", async () => {
         expect(textCurrentPage).toContain(GAMING_PRO);
     });
     test("Notebooks test", async ({ page }) => {
+        logger.info("Notebooks test");
         const notebooks = PageFactory.getPage(page, "Notebooks") as NotebooksPage;
         await notebooks.visitNotebooks();
         await notebooks.clickNotebooks();
@@ -30,6 +33,7 @@ test.describe("Tests wedsite 3dnews.ru", async () => {
         expect(urlGamingNote).toContain(GAMING_NOTEBOOKS);
     });
     test("Tablets test", async ({ page }) => {
+        logger.info("Tablets test");
         const tablets = PageFactory.getPage(page, "Tablets") as TabletsPage;
         await tablets.visitTablets();
         await tablets.clickSmartWatch();
@@ -37,12 +41,14 @@ test.describe("Tests wedsite 3dnews.ru", async () => {
         expect(textCurrentPage).toContain(WATCH_3_PRO);
     });
     test("Phone test", async ({ page }) => {
+        logger.info("Phone test");
         const phone = PageFactory.getPage(page, "Phone") as PhonePage;
         await phone.visitPhone();
         await phone.clickSmartPhone();
         await expect(page).toHaveTitle(SMARTPHONES);
     });
     test("Photo and Video test", async ({ page }) => {
+        logger.info("Photo and Video test");
         const digital = PageFactory.getPage(page, "Photo") as PhotoVideoPage;
         await digital.visitDigital();
         await digital.clickVideoCams();

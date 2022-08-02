@@ -5,6 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "npx playwright test tests/3dnews.spec.ts --headed --reporter=allure-playwright",
+        "test:logger": "npx playwright test tests/3dnews.spec.ts",
         "prettier": "prettier --write .",
         "allure:reporter": "npx allure generate ./allure-results --clean",
         "allure:open": "npx allure open ./allure-report"
@@ -15,6 +16,7 @@
     "devDependencies": {
         "@playwright/test": "^1.24.1",
         "allure-playwright": "^2.0.0-beta.18",
-        "typescript": "^4.7.4"
+        "typescript": "^4.7.4",
+        "winston": "^3.8.1"
     }
 }
